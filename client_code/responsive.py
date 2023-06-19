@@ -3,15 +3,14 @@ from anvil.js import window
 import anvil
 from anvil.js import get_dom_node
 
-def __setattr__(self, attr_name, attr_value):
-    if not hasattr(self,attr_name):
-        dom=get_dom_node(self)
-        exec(f'dom.style.{attr_name} = "{attr_value}"',{"dom":dom})
+def set(self, property_name, property_value,important=False):
+    if important:
+        priority='important'
     else:
-        original_setattr(self,attr_name,attr_value)
+        priority='undefined'
+    get_dom_node(self).setProperty(property_name,property_value,priority)
 
-original_setattr=anvil.Component.__setattr__
-anvil.Component.__setattr__=__setattr__
+anvil.Component.set=set
         
 current_mode='mobile'
 mobile_width_threshold=768
