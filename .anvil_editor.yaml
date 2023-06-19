@@ -1,8 +1,7 @@
 unique_ids:
-  forms:
-    Form1: '1687149334067323613158860.79266'
+  forms: {}
   modules:
-    Module1: '1687149215625784397204726.3726'
+    responsive: '1687149215625784397204726.3726'
   server_modules: {}
   assets:
     standard-page.html: 3UQG6A5WY2LEPMHXQ4ZMJ7ANDNM4W4SD

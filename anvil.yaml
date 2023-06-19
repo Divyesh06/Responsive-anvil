@@ -1,7 +1,8 @@
 allow_embedding: false
-package_name: Custom_HTML_44
-name: Custom HTML 44
-startup_form: Form1
+package_name: responsive
+startup: {type: module, module: responsive}
+name: responsive
+startup_form: null
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 services:
 - source: /runtime/services/tables.yml
