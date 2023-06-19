@@ -13,7 +13,7 @@ def set(self, property_name, property_value,important=False):
 anvil.Component.set=set
         
 current_mode='mobile'
-mobile_width_threshold=768
+pc_width_threshold=768
 forms=[]
 
 def form(form):
@@ -45,10 +45,10 @@ def switch_to_pc():
             form.on_pc()
 
 def on_resize(*args):
-    if current_mode == 'mobile' and window.innerWidth>mobile_width_threshold:
+    if current_mode == 'mobile' and window.innerWidth>pc_width_threshold:
         switch_to_pc()
 
-    elif current_mode == 'pc' and window.innerWidth < mobile_width_threshold:
+    elif current_mode == 'pc' and window.innerWidth < pc_width_threshold:
         switch_to_mobile()
 
 on_resize()
