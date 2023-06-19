@@ -34,14 +34,14 @@ def switch_to_mobile():
     global current_mode
     current_mode='mobile'
     for form in forms:
-        if getattr(form,'on_mobile'):
+        if hasattr(form,'on_mobile'):
             form.on_mobile()
 
 def switch_to_pc():
     global current_mode
     current_mode='pc'
     for form in forms:
-        if hasttr(form,'on_pc'):
+        if hasattr(form,'on_pc'):
             form.on_pc()
 
 def on_resize(*args):
