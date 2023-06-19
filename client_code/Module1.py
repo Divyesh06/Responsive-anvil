@@ -1,14 +1,16 @@
 import anvil
 
-mobile_funcs={}
+mobile_funcs=[]
 pc_funcs={}
 
 original_open=anvil.open_form
 
 def on_mobile(func):
-    func_form=func.__module__.split('.')[-1]
-    mobile_funcs[func_form]=func
-
+    mobile_funcs.append(func)
+    def inner(self):
+        print('LOL')
+    return inner
+    
 def on_pc(func):
     func_form=func.__module__.split('.')[-1]
     pc_funcs[func_form]=func
@@ -18,6 +20,5 @@ def new_open_form(form,*args,**kwargs):
     original_open(form,*args,**kwargs)
 
 def raise_all_mobile():
-    all_mobile_funcs=mobile_funcs.values()
-    for i in all_mobile_funcs:
+    for i in mobile_funcs:
         i()
