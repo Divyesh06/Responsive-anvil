@@ -21,10 +21,10 @@ def form(form):
     def __init__(self,**properties):
         original_init(self,**properties)
         forms.append(self)
-        if current_mode=='pc':
+        if current_mode=='pc' and hasttr(self,'on_pc'):
             self.on_pc()
         else:
-            self.on_mobile()
+            self.on_mobile() and hasttr(self,'on_mobile')
 
     form.__init__=__init__
     return form
