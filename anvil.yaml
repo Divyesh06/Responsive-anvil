@@ -1,5 +1,9 @@
 allow_embedding: false
 package_name: Custom_HTML_44
 name: Custom HTML 44
+startup_form: Form1
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
