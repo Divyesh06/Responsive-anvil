@@ -23,8 +23,9 @@ def form(form):
         forms.append(self)
         if current_mode=='pc' and hasattr(self,'on_pc'):
             self.on_pc()
-        else:
-            self.on_mobile() and hasattr(self,'on_mobile')
+            
+        elif current_mode=='mobile' and hasattr(self,'on_mobile'):
+            self.on_mobile() 
 
     form.__init__=__init__
     return form
