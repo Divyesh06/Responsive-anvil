@@ -8,7 +8,7 @@ def set(self, property_name, property_value,important=False):
         priority='important'
     else:
         priority='undefined'
-    get_dom_node(self).setProperty(property_name,property_value,priority)
+    get_dom_node(self).style.setProperty(property_name,property_value,priority)
 
 anvil.Component.set=set
         
