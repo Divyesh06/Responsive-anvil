@@ -1,17 +1,15 @@
 from anvil.js import window
-
-import anvil
 from anvil.js import get_dom_node
 
-def set(self, property_name, property_value,important=False):
+def set_css(comp, property_name, property_value,important=False):
+    """Sets the CSS property of a component with an optional argument to specify if it is important"""
     if important:
         priority='important'
     else:
         priority='undefined'
-    get_dom_node(self).style.setProperty(property_name,property_value,priority)
+    get_dom_node(comp).style.setProperty(property_name,property_value,priority)
 
-anvil.Component.set=set
-        
+
 current_mode='mobile'
 pc_width_threshold=768
 forms=[]
