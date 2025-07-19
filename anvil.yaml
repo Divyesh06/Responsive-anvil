@@ -1,10 +1,10 @@
 allow_embedding: false
-package_name: responsive
-startup: {type: module, module: responsive}
 name: responsive
-startup_form: null
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+package_name: responsive
+runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
 services:
-- source: /runtime/services/tables.yml
-  client_config: {}
+- client_config: {}
   server_config: {}
+  source: /runtime/services/tables.yml
+startup: {module: responsive, type: module}
+startup_form: null

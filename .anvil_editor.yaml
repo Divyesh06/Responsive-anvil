@@ -1,6 +1,7 @@
 unique_ids:
+  assets: {}
   forms: {}
   modules:
     responsive: '1687149215625784397204726.3726'
+  scripts: {}
   server_modules: {}
-  assets: {}
